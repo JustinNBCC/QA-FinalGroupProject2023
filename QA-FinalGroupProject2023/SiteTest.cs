@@ -11,6 +11,33 @@ namespace QA_FinalGroupProject2023
 {
     class SiteTest
     {
+
+        public bool VerifyLogoOnThePage()
+        {
+            return SiteWebElement.Logo(driver).Displayed;
+        }
+
+
+        public bool VerifyPageTitle()
+        {
+            string expectedTitle = "Login - Bitter";
+            string actualTitle = driver.Title;
+            return expectedTitle == actualTitle;
+        }
+
+
+        
+        public static void VerifyEmailLink(IWebDriver driver){
+
+            SiteWebElement.EmailLink(driver).Click();
+            string expectedEmail = "realemail@gmail.com";
+            string actualEmail = driver.FindElement(By.LinkText(expectedEmail)).Text;
+            return expectedEmail == actualEmail;
+
+        }
+
+
+
         public static void ValidLogin(IWebDriver driver, string strUsername, string strPassword){
             
             driver.Url = "/site6/login.php";
@@ -52,17 +79,54 @@ namespace QA_FinalGroupProject2023
 
 
         public static bool Test001(IWebDriver driver){
+            try
+            {
+                ValidLogin(driver, "ValidLogin", "ValidPWD");
 
-            ValidLogin(driver, "ValidLogin", "ValidPWD");
-            
-            return true;
+                IWebElement divSuc = SiteWebElement.divLoginSuccess(driver);
+
+                string strSuc = divSuc.Text;
+                if (strSuc.Contains(""))
+                {
+                    return true;
+                }else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+
+            }
         }
 
         public static bool Test002(IWebDriver driver) {
 
-            InvalidLogin(driver, "inValidLogin", "inValidPWD");
+            
+            try
+            {
+                InvalidLogin(driver, "inValidLogin", "inValidPWD");
 
-            return true;
+                IWebElement divSuc = SiteWebElement.divLoginSuccess(driver);
+
+                string strSuc = divSuc.Text;
+                if (strSuc.Contains(""))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+
+            }
         }
 
 
