@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,12 @@ namespace QA_FinalGroupProject2023
             IWebElement imgLogo = driver.FindElement(By.CssSelector("a.navbar-brand > img.logo"));
             return imgLogo;
         }
-        
+
+        //for successfull login: *******************************************************************************
+        public static IWebElement divLoginSuccess(IWebDriver driver)
+        {
+            IWebElement divLoginSuccess = driver.FindElement(By.Id(""));//*******************************************************************************
+            return divLoginSuccess;
+        }
     }
 }
