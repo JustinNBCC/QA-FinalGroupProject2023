@@ -17,7 +17,6 @@ namespace QA_FinalGroupProject2023
             IWebDriver driver = new ChromeDriver(@"C:\Selenium");
 
 
-            /*
 
             //-----------------------------------------------------------------------Tag Test Start
 
@@ -117,6 +116,7 @@ namespace QA_FinalGroupProject2023
                 Console.WriteLine("TagTest008 - Login page Success: Failled...");
             }
             
+            /*
             // Run the tag test
             bool TagTest00 = SiteTest.TagTest00(driver);
 
@@ -143,22 +143,21 @@ namespace QA_FinalGroupProject2023
             */
 
 
-
             //-----------------------------------------------------------------------Link Test Start
 
 
+            //I think test 1 might be causing errors for the other 2 test need 2 check again
+            // Run the Link test
+            bool LnkTest001 = SiteTest.LnkTest001(driver);
 
-            //// Run the Link test
-            //bool LnkTest001 = SiteTest.LnkTest001(driver);
-
-            //if (LnkTest001)
-            //{
-            //    Console.WriteLine("LnkTest001 - Signup Link Test: Passed!");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("LnkTest001 - Signup Link Test: Failled...");
-            //}
+            if (LnkTest001)
+            {
+                Console.WriteLine("LnkTest001 - Signup Link Test: Passed!");
+            }
+            else
+            {
+                Console.WriteLine("LnkTest001 - Signup Link Test: Failled...");
+            }
 
 
 
@@ -174,21 +173,21 @@ namespace QA_FinalGroupProject2023
                 Console.WriteLine("LnkTest002 - Email Link Test: Failled...");
             }
 
-            //// Run the Link test
-            //bool LnkTest003 = SiteTest.LnkTest003(driver);
+            // Run the Link test
+            bool LnkTest003 = SiteTest.LnkTest003(driver);
 
-            //if (LnkTest003)
-            //{
-            //    Console.WriteLine("LnkTest003 - Logo to index Link Test: Passed!");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("LnkTest003 - Logo to index Link Test: Failled...");
-            //}
+            if (LnkTest003)
+            {
+                Console.WriteLine("LnkTest003 - Logo to index Link Test: Passed!");
+            }
+            else
+            {
+                Console.WriteLine("LnkTest003 - Logo to index Link Test: Failled...");
+            }
 
 
 
-            /*
+            
             //-----------------------------------------------------------------------Log Test Start
 
             // Run the login test
@@ -215,7 +214,7 @@ namespace QA_FinalGroupProject2023
                 Console.WriteLine("LogTest002 - Login page Success: Failled...");
             }
 
-            */
+            
 
             // Short delay so we can see reults.
             Thread.Sleep(10000);
