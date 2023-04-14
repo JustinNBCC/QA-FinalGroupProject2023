@@ -240,7 +240,81 @@ namespace QA_FinalGroupProject2023
         }
 
 
+        //Link Tests:
 
+        //signup link test
+        public static bool LnkTest001(IWebDriver driver)
+        {
+            try
+            {
+                driver.Url = "http://remote.faedine.com/site6/Login.php";
+
+                //Get Element
+                IWebElement linkSignup = driver.FindElement(By.LinkText("Click Here"));
+
+                linkSignup.Click();
+
+                //Check if page changed 
+                if (driver.Url.Contains("signup.php"))
+                {
+                    driver.Quit();
+                    return true;
+                }
+                else
+                {
+                    driver.Quit();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }//end signup link method
+
+
+
+        //email link test
+        public static bool LnkTest002(IWebDriver driver)
+        {
+            try
+            {
+                //Get Element
+                IWebElement emailLink = driver.FindElement(By.XPath("//a[contains(@href,'mailto:')]"));
+
+                //create both emails for comparison
+                string expectedEmail = "realemail@gmail.com";
+                string actualEmail = emailLink.Text;
+
+                // Click the email address link
+                emailLink.Click();
+                try
+                {
+                    // Verify that it opens up the default email application
+                    Assert.IsTrue(driver.Url.StartsWith("mailto:"), "Failed to open default email application");
+
+                    // Verify that the email address is correct
+                    Assert.AreEqual(expectedEmail, actualEmail, "Email address is incorrect");
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                Assert.Fail("Test failed: " + ex.Message);
+                return false;
+            }
+        }//end email link method 
+
+
+
+        //Login test
+
+        //default login steps:
         public static void Login(IWebDriver driver, string strUsername, string strPassword){
             
             driver.Url = "http://remote.faedine.com/site6/Login.php";
@@ -256,18 +330,17 @@ namespace QA_FinalGroupProject2023
             // Click login button
             btnLogin.Click();
 
+        }//end login method 
 
-        }
-
-        
-
-
+    
         //Login Tests:
         public static bool LogTest001(IWebDriver driver){
             try
             {
+                //try login-in
                 Login(driver, "ValidLogin", "ValidPWD");
 
+                //Get Elements
                 IWebElement divSuc = SiteWebElement.divLoginSuccess(driver);
 
                 string strSuc = divSuc.Text;
@@ -285,24 +358,51 @@ namespace QA_FinalGroupProject2023
             }
         }
 
-        public static bool Test002(IWebDriver driver) {
+        //public static bool Test002(IWebDriver driver) {
+        //    try
+        //    {
+        //        Login(driver, "inValidLogin", "inValidPWD");
 
-            
+        //        IWebElement divSuc = SiteWebElement.divLoginSuccess(driver);
+
+        //        string strSuc = divSuc.Text;
+        //        if (strSuc.Contains(""))
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        return false;
+
+        //    }
+        //}
+
+        //Invalid Login Test
+        public static bool Test002(IWebDriver driver)
+        {
             try
             {
                 Login(driver, "inValidLogin", "inValidPWD");
-
-                IWebElement divSuc = SiteWebElement.divLoginSuccess(driver);
-
-                string strSuc = divSuc.Text;
-                if (strSuc.Contains(""))
+                try
                 {
+                    // Verify that an error alert box message appears
+                    IAlert alert = driver.SwitchTo().Alert();
+                    string errorMessage = alert.Text;
+                    Assert.That(errorMessage, Is.EqualTo("User name and password are not matched. Please try again!"));
+                    alert.Accept();
                     return true;
                 }
-                else
+                catch
                 {
                     return false;
                 }
+
             }
             catch (Exception ex)
             {
@@ -310,7 +410,7 @@ namespace QA_FinalGroupProject2023
                 return false;
 
             }
-        }
+        }//end invalid login test
 
 
         /*
