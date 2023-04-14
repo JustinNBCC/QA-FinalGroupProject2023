@@ -107,7 +107,7 @@ namespace QA_FinalGroupProject2023
         }//end logo method
 
 
-
+        //username lable test
         public static bool TagTest004(IWebDriver driver)
         {
             try
@@ -118,14 +118,128 @@ namespace QA_FinalGroupProject2023
                 IWebElement screenNameLabel = driver.FindElement(By.CssSelector("label[for='username']"));
 
                 // Verify that the label exists and is displayed
-                Assert.That(screenNameLabel.Displayed, Is.True);
+                try
+                {
+                    Assert.That(screenNameLabel.Displayed, Is.True);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
 
             }
             catch (Exception ex)
             {
                 return false;
             }
-        }//end logo method
+        }//end username lable method
+
+
+
+        //password lable test
+        public static bool TagTest005(IWebDriver driver)
+        {
+            try
+            {
+                driver.Url = "http://remote.faedine.com/site6/Login.php";
+
+                // Find the password label
+                IWebElement passwordLabel = driver.FindElement(By.CssSelector("label[for='password']"));
+
+                // Check that the label is displayed
+                bool isDisplayed = passwordLabel.Displayed;
+
+                return isDisplayed;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }//end password lable method 
+
+
+
+
+        //username input test
+        public static bool TagTest006(IWebDriver driver)
+        {
+            try
+            {
+                driver.Url = "http://remote.faedine.com/site6/Login.php";
+
+                //Get Element
+                IWebElement inputField = SiteWebElement.Username(driver);
+
+                //Check if displayed 
+                return inputField.Displayed;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+
+        //password input test
+        public static bool TagTest007(IWebDriver driver)
+        {
+            try
+            {
+                driver.Url = "http://remote.faedine.com/site6/Login.php";
+
+                //Get Element
+                IWebElement inputField = SiteWebElement.Password(driver);
+
+                //Check if displayed 
+                return inputField.Displayed;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+
+        // Verify that the "Login" button exists and is displayed
+        public static bool TagTest008(IWebDriver driver)
+        {
+            try
+            {
+                //Get Element
+                IWebElement loginButton = SiteWebElement.LoginButton(driver);
+
+                //check if displayed
+                return loginButton.Displayed;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        // Verify that the "Don't have a Bitter Account?" link exists
+        public static bool TagTest009(IWebDriver driver)
+        {
+            try
+            {
+                //Get Element
+                IWebElement dontHaveAccountLink = driver.FindElement(By.LinkText("Click Here"));
+                
+                //Check if displayed
+                return dontHaveAccountLink.Displayed;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
 
         public static void Login(IWebDriver driver, string strUsername, string strPassword){
             
