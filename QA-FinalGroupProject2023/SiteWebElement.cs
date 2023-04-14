@@ -39,6 +39,54 @@ namespace QA_FinalGroupProject2023
             return imgLogo;
         }
 
+        public static IWebElement ContactUsEmailLink(IWebDriver driver)
+        {
+            IWebElement contactUsEmailLink = driver.FindElement(By.CssSelector("a[href='mailto:realemail@gmail.com']"));
+            return contactUsEmailLink;
+        }
+
+        public static IWebElement SignUpLink(IWebDriver driver)
+        {
+            IWebElement signUpLink = driver.FindElement(By.CssSelector("a[href='signup.php']"));
+            return signUpLink;
+        }
+
+        public static IWebElement Navbar(IWebDriver driver)
+        {
+            IWebElement navbar = driver.FindElement(By.CssSelector(".navbar"));
+            return navbar;
+        }
+
+        public static IWebElement ScreenNameLabel(IWebDriver driver)
+        {
+            IWebElement screenNameLabel = driver.FindElement(By.CssSelector("label[for='username']"));
+            return screenNameLabel;
+        }
+
+        public static IWebElement PasswordLabel(IWebDriver driver)
+        {
+            IWebElement passwordLabel = driver.FindElement(By.CssSelector("label[for='password']"));
+            return passwordLabel;
+        }
+
+
+
+        //*****************************************
+        public static IWebElement DontHaveAccountLink(IWebDriver driver)
+        {
+            IWebElement dontHaveAccountLink = driver.FindElement(By.LinkText("Click Here"));
+            return dontHaveAccountLink;
+        }
+
+        public static IWebElement LinkSignup(IWebDriver driver)
+        {
+            IWebElement linkSignup = driver.FindElement(By.LinkText("Click Here"));
+            return linkSignup;
+        }
+        //*****************************************
+
+
+
         //for successfull login: *******************************************************************************
         public static IWebElement divLoginSuccess(IWebDriver driver)
         {

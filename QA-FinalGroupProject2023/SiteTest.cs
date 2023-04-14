@@ -71,7 +71,8 @@ namespace QA_FinalGroupProject2023
                 driver.Url = "http://remote.faedine.com/site6/Login.php";
 
                 // Find the logo image element
-                IWebElement logoImage = driver.FindElement(By.CssSelector(".logo"));
+                //IWebElement logoImage = driver.FindElement(By.CssSelector(".logo"));
+                IWebElement logoImage = SiteWebElement.Logo(driver);
 
                 // Verify that the logo image exists and is displayed
                 bool isDisplayed = logoImage.Displayed;
