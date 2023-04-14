@@ -385,7 +385,7 @@ namespace QA_FinalGroupProject2023
         //}
 
         //Invalid Login Test
-        public static bool Test002(IWebDriver driver)
+        public static bool LogTest002(IWebDriver driver)
         {
             try
             {

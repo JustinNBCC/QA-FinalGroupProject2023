@@ -10,3 +10,5 @@ C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\WebDriver.d
 C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\obj\Debug\QA-FinalGroupProject2023.csproj.CopyComplete
 C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\obj\Debug\QA-FinalGroupProject2023.exe
 C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\obj\Debug\QA-FinalGroupProject2023.pdb
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\nunit.framework.dll
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\nunit.framework.xml
