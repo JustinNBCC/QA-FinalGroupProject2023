@@ -258,12 +258,10 @@ namespace QA_FinalGroupProject2023
                 //Check if page changed 
                 if (driver.Url.Contains("signup.php"))
                 {
-                    driver.Quit();
                     return true;
                 }
                 else
                 {
-                    driver.Quit();
                     return false;
                 }
             }
@@ -280,8 +278,10 @@ namespace QA_FinalGroupProject2023
         {
             try
             {
-                //Get Element
-                IWebElement emailLink = driver.FindElement(By.XPath("//a[contains(@href,'mailto:')]"));
+                //Get Element   
+                //IWebElement emailLink = driver.FindElement(By.XPath("//a[contains(@href,'mailto:')]"));
+                IWebElement emailLink = SiteWebElement.ContactUsEmailLink(driver);
+
 
                 //create both emails for comparison
                 string expectedEmail = "realemail@gmail.com";
@@ -298,7 +298,7 @@ namespace QA_FinalGroupProject2023
                     Assert.AreEqual(expectedEmail, actualEmail, "Email address is incorrect");
                     return true;
                 }
-                catch
+                catch (NoSuchElementException)
                 {
                     return false;
                 }
@@ -306,12 +306,38 @@ namespace QA_FinalGroupProject2023
             catch (Exception ex)
             {
                 
-                Assert.Fail("Test failed: " + ex.Message);
                 return false;
             }
         }//end email link method 
 
+        //Logo to index link test
+        public static bool LnkTest003(IWebDriver driver)
+        {
+            try
+            {
+                driver.Url = "http://remote.faedine.com/site6/Login.php";
 
+                //Get Element
+                IWebElement linkLogo = driver.FindElement(By.CssSelector(".navbar-brand"));
+                //IWebElement linkLogo = driver.FindElement(By.LinkText("<img src='images/logo.jpg' class='logo'>"));
+
+                linkLogo.Click();
+
+                //Check if page changed 
+                if (driver.Url.Contains("index.html"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }//end signup link method
 
         //Login test
 
