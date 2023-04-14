@@ -1,0 +1,12 @@
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\obj\Debug\QA-FinalGroupProject2023.csproj.AssemblyReference.cache
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\obj\Debug\QA-FinalGroupProject2023.csproj.CoreCompileInputs.cache
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\selenium-manager\linux\selenium-manager
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\selenium-manager\macos\selenium-manager
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\QA-FinalGroupProject2023.exe.config
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\QA-FinalGroupProject2023.exe
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\QA-FinalGroupProject2023.pdb
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\bin\Debug\WebDriver.dll
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\obj\Debug\QA-FinalGroupProject2023.csproj.CopyComplete
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\obj\Debug\QA-FinalGroupProject2023.exe
+C:\repos\QA-FinalGroupProject2023\QA-FinalGroupProject2023\obj\Debug\QA-FinalGroupProject2023.pdb
